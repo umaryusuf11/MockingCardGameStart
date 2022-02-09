@@ -10,22 +10,26 @@ import java.util.ArrayList;
 public class LoadConfig{
     final static String configPath = "src/main/resources/playersNames.cfg";
     protected List<String> propertyData = new ArrayList<String>();
+    protected Scanner propertyReader;
 
-    protected Scanner getScanner(){
+    public LoadConfig(){
         File propertyFile = new File(this.configPath);
         Scanner propertyReader = null;
         try {
-             propertyReader = new Scanner(propertyFile);
+            propertyReader = new Scanner(propertyFile);
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        return propertyReader;
+        this.propertyReader = propertyReader;
+    }
+
+    public void setPropertyReader(Scanner propertyReader){
+        this.propertyReader = propertyReader;
     }
 
     protected void populatePropertyData(){
         try {
-            Scanner propertyReader = getScanner();
             while (propertyReader.hasNextLine()) {
                 String propertyRow = propertyReader.nextLine();
                 this.propertyData.add(propertyRow);

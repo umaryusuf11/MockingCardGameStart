@@ -16,19 +16,21 @@ class LoadConfigTest {
     @Test
     void populatePropertyData() {
         Scanner mockScanner = mock(Scanner.class);
-        when(mockScanner.hasNextLine()).thenReturn(true);
-        when(mockScanner.nextLine()).thenReturn("Molly Tester");
-        when(mockScanner.hasNextLine()).thenReturn(true);
-        when(mockScanner.nextLine()).thenReturn("Susan Tester");
-        when(mockScanner.hasNextLine()).thenReturn(false);
-        LoadConfig spyLoadConfig = spy(loadConfig);
-        when(spyLoadConfig.getScanner()).thenReturn(mockScanner);
-        spyLoadConfig.populatePropertyData();
-        assertEquals(2,spyLoadConfig.propertyData.size());
+        when(mockScanner.hasNextLine()).thenReturn(true).thenReturn(true).thenReturn(false);
+        when(mockScanner.nextLine()).thenReturn("Molly Tester").thenReturn("Susan Tester");
+        loadConfig.setPropertyReader(mockScanner);
+        loadConfig.populatePropertyData();
+        assertEquals(2,loadConfig.propertyData.size());
     }
 
 
     @Test
     void getConfig() {
+        Scanner mockScanner = mock(Scanner.class);
+        when(mockScanner.hasNextLine()).thenReturn(true).thenReturn(true).thenReturn(false);
+        when(mockScanner.nextLine()).thenReturn("Molly Tester").thenReturn("Susan Tester");
+        loadConfig.setPropertyReader(mockScanner);
+        loadConfig.populatePropertyData();
+        assertEquals("Susan Tester",loadConfig.getConfig().get(1));
     }
 }

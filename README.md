@@ -33,6 +33,12 @@ The lab will look at doubling using Mockito mock/spy. Please refer to week five 
 * Create a test for "play", so an end to end test 
   * Advanced - Test name is "play", check if the game has finished
 
+## Structure.LoadConfig
+* Create a test for populatePropertyData
+  * Moderate - Test name populatePropertyData
+* Create a test for getConfig
+  * Easy with above test logic - Test name getConfig
+
 ## Submit
 * Before you commit your final solution, double check it can build and all the test you completed can run.
 * Go to the Week 6 section and open the assessment
