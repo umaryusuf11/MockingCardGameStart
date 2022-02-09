@@ -93,81 +93,37 @@ class CardGameTest {
 
     @Test
     void getComputerPlayersNames(){
-        List<String> mockNames = new ArrayList<String>();
-        mockNames.add("Don Tester");
-        mockNames.add("Susan Tester");
-        mockNames.add("Agnes Tester");
-        LoadConfig mockLoadConfig = mock(LoadConfig.class);
-        when(mockLoadConfig.getConfig()).thenReturn(mockNames);
-        cardGame.setLoadConfig(mockLoadConfig);
-        assertEquals(mockNames, cardGame.getComputerPlayersNames());
+        fail("Not yet implemented"); //Remove
     }
 
     @Test
     void createComputerPlayers(){
-        List<String> mockNames = new ArrayList<String>();
-        mockNames.add("Don A Dealer");
-        mockNames.add("Susan A Tester");
-        mockNames.add("Agnes Is Great");
-        LoadConfig mockLoadConfig = mock(LoadConfig.class);
-        when(mockLoadConfig.getConfig()).thenReturn(mockNames);
-        cardGame.setLoadConfig(mockLoadConfig);
-        cardGame.createComputerPlayers(4);
-        assertEquals("Agnes Is Great",cardGame.players.get(2).getName());
+        fail("Not yet implemented"); //Remove
     }
 
     @Test
     void createComputerPlayersSize(){
-        List<String> mockNames = new ArrayList<String>();
-        mockNames.add("Don A Dealer");
-        mockNames.add("Susan A Tester");
-        mockNames.add("Agnes Is Great");
-        LoadConfig mockLoadConfig = mock(LoadConfig.class);
-        when(mockLoadConfig.getConfig()).thenReturn(mockNames);
-        cardGame.setLoadConfig(mockLoadConfig);
-        cardGame.createComputerPlayers(4);
-        assertEquals(3,cardGame.players.size());
+        fail("Not yet implemented"); //Remove
     }
 
     @Test
     void createHumanPlayer(){
-        Scanner mockScanner = mock(Scanner.class);
-        when(mockScanner.nextLine()).thenReturn("Derek");
-        cardGame.userInput.setUserInput(mockScanner);
-        cardGame.createHumanPlayer();
-        assertEquals("Derek", cardGame.players.get(0).getName());
+        fail("Not yet implemented"); //Remove
     }
 
     @Test
     void initiatePlayers(){
-        Scanner mockScanner = mock(Scanner.class);
-        when(mockScanner.nextLine()).thenReturn("Derek");
-        when(mockScanner.nextLine()).thenReturn("3");
-        cardGame.userInput.setUserInput(mockScanner);
-        cardGame.initiatePlayers();
-        assertEquals(3, cardGame.players.size());
+        fail("Not yet implemented"); //Remove
     }
 
     @Test
     void initiate(){
-        Scanner mockScanner = mock(Scanner.class);
-        when(mockScanner.nextLine()).thenReturn("Derek");
-        when(mockScanner.nextLine()).thenReturn("3");
-        cardGame.userInput.setUserInput(mockScanner);
-        cardGame.initiate();
-        assertEquals(2, cardGame.players.get(0).getHand().size());
+        fail("Not yet implemented"); //Remove
     }
 
     @Test
     void play(){
-        ConsoleInput mockInput = mock(ConsoleInput.class);
-        when(mockInput.getString()).thenReturn("Derek");
-        when(mockInput.getInteger()).thenReturn(3);
-        when(mockInput.getString()).thenReturn("T");
-        cardGame.setUserInput(mockInput);
-        cardGame.setFinishGame(true);
-        cardGame.play();
-        assertTrue(cardGame.finshGame);
+        fail("Not yet implemented"); //Remove
     }
 
 }

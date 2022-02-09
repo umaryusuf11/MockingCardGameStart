@@ -60,13 +60,6 @@ class BlackJackTest {
 
     @Test
     void playHasThreeCards(){
-        CardGame overrideBlackJack = new BlackJack("HK,HQ,CJ,CK,CQ,DJ,DK,DQ");
-        ConsoleInput mockInput = mock(ConsoleInput.class);
-        when(mockInput.getString()).thenReturn("Derek");
-        when(mockInput.getInteger()).thenReturn(3);
-        when(mockInput.getString()).thenReturn("T");
-        overrideBlackJack.setUserInput(mockInput);
-        overrideBlackJack.play();
-        assertEquals(3,overrideBlackJack.players.get(0).getHand().size());
+        fail("Not yet implemented"); //Remove
     }
 }
