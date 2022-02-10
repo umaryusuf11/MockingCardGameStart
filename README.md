@@ -19,7 +19,7 @@
 
 ## Game.CardGame Tests
 * Aim to mock or spy at the earliest point so mock Scanner rather than ConsoleInput to maximise the code tested. If you mock external libraries you test more of your code.
-* If you are mocking a class, look to see if there is a setter for the variable using this calls in the client class e.g. the main class the calls the class you mock.
+* If you are testing a class, client class, that calls another class, calling class. Check if there is a setter in the client class for the calling class. You can then mock the calling class and set it into the client class. Example CounsoleInput is the client class and Scanner is the class called. ConsoleInput has a setter setUserInput to setup or change the called class Scanner. You can then change ConsoleInput to use the mock of Scanner. 
 * Create a test for getComputerPlayersNames, create a mock for LoadConfig, note there is CardGame.setLoadConfig.
   * Moderate - Test name getComputerPlayersNames you can get a list of at least three names. Use different names to the playersNames.cfg
 * Create two tests for createComputerPlayers
