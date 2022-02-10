@@ -45,8 +45,7 @@ class ConsoleInputTest {
     @Test
     void getIntegerFirstString(){
         Scanner mockScanner = mock(Scanner.class);
-        when(mockScanner.nextLine()).thenReturn("one");
-        when(mockScanner.nextLine()).thenReturn("25");
+        when(mockScanner.nextLine()).thenReturn("one").thenReturn("25");
         consoleInput.setUserInput(mockScanner);
         assertEquals(25, consoleInput.getInteger());
     }
