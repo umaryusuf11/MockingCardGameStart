@@ -23,11 +23,11 @@ The lab will look at doubling using Mockito mock/spy. Please refer to week five 
   * Easy after previous - Test name createComputerPlayers for a list of three names and check the name of the third computer player is correct
   * Easy - Test name createComputerPlayersSize to see three players have been created
 * Create a test for createHumanPlayer
-  * Easy - Test name createHumanPlayer
+  * Easy - Test name createHumanPlayer, check the name of the human player
 * Create a test for initiatePlayers
-  * Easy - Test name initiatePlayers
+  * Easy - Test name initiatePlayers, check the number of players created
 * Create a test for play
-  * Moderate - Test name play, think about the play while condition
+  * Moderate - Test name play, think about the play while condition, try to run the game end to end
 
 ## Game.BlackJack
 * Create a test for "play", so an end to end test 
@@ -35,9 +35,9 @@ The lab will look at doubling using Mockito mock/spy. Please refer to week five 
 
 ## Structure.LoadConfig
 * Create a test for populatePropertyData
-  * Moderate - Test name populatePropertyData
+  * Moderate - Test name populatePropertyData, check you can get at least two line mocked
 * Create a test for getConfig
-  * Easy with above test logic - Test name getConfig
+  * Easy with above test logic - Test name getConfig, same as above
 
 ## Submit
 * Before you commit your final solution, double check it can build and all the test you completed can run.
