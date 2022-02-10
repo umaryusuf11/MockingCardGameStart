@@ -6,17 +6,18 @@
 
 
 ## Overview
-The lab will look at doubling using Mockito mock/spy. Please refer to week five lecture on Doubling and Mocking. This will mock calls to the file system, calls to external libraries and input from the console.
+The lab will look at doubling using Mockito mock/spy. Please refer to week five lecture on Doubling and Mocking. This lab will mock calls to the file system, calls to external libraries and input from the console.
 
 ## Already Done
-* Mocks have been completed for ConsoleInput, see ConsoleInputTest. 
-* You have also been provided with mocking for CardGame.getNumberOfPlayers. 
+* Mocks have been completed for ConsoleInput, see [ConsoleInputTest](https://stgit.dcs.gla.ac.uk/oose-2021-22-teaching-team/mockingcardgamesolution/-/blob/main/src/test/java/Console/ConsoleInputTest.java). 
+* You have also been provided with mocking for CardGame.getNumberOfPlayers in [CardGameTest](https://stgit.dcs.gla.ac.uk/oose-2021-22-teaching-team/mockingcardgamesolution/-/blob/main/src/test/java/Game/CardGameTest.java). 
 * Please review these plus the lecture slides for Doubling and Mocking. 
 * You have also had a worked example for mocking please see [https://stgit.dcs.gla.ac.uk/oose-2021-22-teaching-team/mockingrockpaperscissor](https://stgit.dcs.gla.ac.uk/oose-2021-22-teaching-team/mockingrockpaperscissor)
 * This starter project uses "packages", please see Java Programming 2 [https://moodle.gla.ac.uk/pluginfile.php/4810902/mod_folder/content/0/1-packages.pdf?forcedownload=1](https://moodle.gla.ac.uk/pluginfile.php/4810902/mod_folder/content/0/1-packages.pdf?forcedownload=1)
 
 ## Game.CardGame Tests
-* Aim to mock or spy at the earliest point so mock Scanner rather than ConsoleInput to maximise the code tested.
+* Aim to mock or spy at the earliest point so mock Scanner rather than ConsoleInput to maximise the code tested. If you mock external libraries you test more of your code.
+* If you are mocking a class, look to see if there is a setter for the variable using this calls in the client class e.g. the main class the calls the class you mock.
 * Create a test for getComputerPlayersNames, create a mock for LoadConfig, note there is CardGame.setLoadConfig.
   * Moderate - Test name getComputerPlayersNames you can get a list of at least three names. Use different names to the playersNames.cfg
 * Create two tests for createComputerPlayers
