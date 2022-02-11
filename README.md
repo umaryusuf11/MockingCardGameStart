@@ -29,6 +29,8 @@
   * Easy - Test name createHumanPlayer, check the name of the human player
 * Create a test for initiatePlayers
   * Easy - Test name initiatePlayers, check the number of players created
+* Create a test for initiate
+  * Easy - Test name initiate, check at least one player has been dealt cards
 * Create a test for play
   * Moderate - Test name play, think about the play while condition, try to run the game end to end
 
