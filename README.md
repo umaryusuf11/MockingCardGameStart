@@ -24,7 +24,7 @@
   * Moderate - Test name getComputerPlayersNames you can get a list of at least three names. Use different names to the playersNames.cfg
 * Create two tests for createComputerPlayers
   * Easy after previous - Test name createComputerPlayers for a list of three names and check the name of the third computer player is correct
-  * Easy - Test name createComputerPlayersSize to see three players have been created
+  * Easy - Test name createComputerPlayersSize to see three players have been created. Not you pass four as the noOfPlayers to create three players, it assumes a human player is created.
 * Create a test for createHumanPlayer
   * Easy - Test name createHumanPlayer, check the name of the human player
 * Create a test for initiatePlayers
