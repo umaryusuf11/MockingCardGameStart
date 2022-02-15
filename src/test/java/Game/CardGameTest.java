@@ -93,7 +93,12 @@ class CardGameTest {
 
     @Test
     void getComputerPlayersNames(){
-        fail("Not yet implemented"); //Remove
+        LoadConfig loadConfig = mock(LoadConfig.class);
+        when(loadConfig.getConfig()).thenReturn(List.of("Player1", "Player2", "Player3"));
+
+        cardGame.setLoadConfig(loadConfig);
+        ArrayList<String> playerNames = new ArrayList<>(List.of("Player1", "Player2", "Player3"));
+        assertEquals(playerNames, cardGame.getComputerPlayersNames());
     }
 
     @Test
