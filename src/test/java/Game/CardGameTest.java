@@ -143,7 +143,16 @@ class CardGameTest {
 
     @Test
     void initiate(){
-        fail("Not yet implemented"); //Remove
+        Scanner scanner = mock(Scanner.class);
+        when(scanner.nextLine()).thenReturn("Player1");
+        when(scanner.nextLine()).thenReturn("4");
+        cardGame.userInput.setUserInput(scanner);
+
+        cardGame.initiatePlayers();
+        cardGame.initiate();
+
+        // hand is null before dealt
+        assertNotNull(cardGame.players.get(0).getHand());
     }
 
     @Test
