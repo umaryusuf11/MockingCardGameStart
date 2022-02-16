@@ -94,8 +94,7 @@ class CardGameTest {
     @Test
     void getComputerPlayersNames(){
         LoadConfig loadConfig = mock(LoadConfig.class);
-        when(loadConfig.getConfig()).thenReturn(List.of("Player1", "Player2", "Player3"));
-
+        when(loadConfig.getConfig()).thenReturn(new ArrayList<String>(List.of("Player1", "Player2", "Player3")));
         cardGame.setLoadConfig(loadConfig);
         ArrayList<String> playerNames = new ArrayList<>(List.of("Player1", "Player2", "Player3"));
         assertEquals(playerNames, cardGame.getComputerPlayersNames());
@@ -103,12 +102,22 @@ class CardGameTest {
 
     @Test
     void createComputerPlayers(){
-        fail("Not yet implemented"); //Remove
+        LoadConfig loadConfig = mock(LoadConfig.class);
+        when(loadConfig.getConfig()).thenReturn(new ArrayList<String>(List.of("Player1", "Player2", "Player3")));
+        cardGame.setLoadConfig(loadConfig);
+        cardGame.createComputerPlayers(4);
+        assertEquals("Player3", cardGame.players.get(2).getName());
+
     }
 
     @Test
     void createComputerPlayersSize(){
-        fail("Not yet implemented"); //Remove
+        LoadConfig loadConfig = mock(LoadConfig.class);
+        // Got an error when I tried to use the List.of() method alone.
+        when(loadConfig.getConfig()).thenReturn(new ArrayList<String>(List.of("Player1", "Player2", "Player3")));
+        cardGame.setLoadConfig(loadConfig);
+        cardGame.createComputerPlayers(4);
+        assertEquals(3, cardGame.players.size());
     }
 
     @Test
