@@ -122,7 +122,11 @@ class CardGameTest {
 
     @Test
     void createHumanPlayer(){
-        fail("Not yet implemented"); //Remove
+        Scanner scanner = mock(Scanner.class);
+        when(scanner.nextLine()).thenReturn("Player1");
+        cardGame.userInput.setUserInput(scanner);
+        cardGame.createHumanPlayer();
+        assertEquals("Player1", cardGame.players.get(0).getName());
     }
 
     @Test
