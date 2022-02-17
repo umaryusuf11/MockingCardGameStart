@@ -3,10 +3,12 @@ package Game;
 import Console.ConsoleInput;
 import Game.BlackJack;
 import Structure.Hand;
+import Structure.LoadConfig;
 import Structure.Player;
 import Structure.PlayerType;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,6 +17,14 @@ import static org.mockito.Mockito.when;
 
 class BlackJackTest {
     BlackJack blackJack = new BlackJack();
+
+    private Scanner mockScanner() {
+        Scanner scanner = mock(Scanner.class);
+        // <PLAYER_NAME> <NUMBER_OF_PLAYERS> <ACTION>
+        // Game starts with 2 cards so twist to get a third card
+        when(scanner.nextLine()).thenReturn("Player1").thenReturn("2").thenReturn("Twist");
+        return scanner;
+    }
 
     @Test
     void generateHelp() {
@@ -59,7 +69,11 @@ class BlackJackTest {
     }
 
     @Test
+    // no "play" test, assumed this to be the test
     void playHasThreeCards(){
-        fail("Not yet implemented"); //Remove
+        blackJack.userInput.setUserInput(mockScanner());
+        blackJack.play();
+
+        assertTrue(blackJack.finshGame);
     }
 }
