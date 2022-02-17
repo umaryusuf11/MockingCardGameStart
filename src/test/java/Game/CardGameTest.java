@@ -24,6 +24,12 @@ class CardGameTest {
         return loadConfig;
     }
 
+    private Scanner mockScanner() {
+        Scanner scanner = mock(Scanner.class);
+        when(scanner.nextLine()).thenReturn("Player1").thenReturn("4");
+        return scanner;
+    }
+
     @Test
     void getDeck() {
         assertEquals(52, cardGame.getDeck().size());
@@ -122,10 +128,7 @@ class CardGameTest {
     @Test
     void createHumanPlayer(){
         cardGame.setLoadConfig(mockLoadConfig());
-
-        Scanner scanner = mock(Scanner.class);
-        when(scanner.nextLine()).thenReturn("Player1");
-        cardGame.userInput.setUserInput(scanner);
+        cardGame.userInput.setUserInput(mockScanner());
         cardGame.createHumanPlayer();
         assertEquals("Player1", cardGame.players.get(0).getName());
     }
@@ -133,11 +136,7 @@ class CardGameTest {
     @Test
     void initiatePlayers(){
         cardGame.setLoadConfig(mockLoadConfig());
-
-        Scanner scanner = mock(Scanner.class);
-        when(scanner.nextLine()).thenReturn("Player1");
-        when(scanner.nextLine()).thenReturn("4");
-        cardGame.userInput.setUserInput(scanner);
+        cardGame.userInput.setUserInput(mockScanner());
 
         cardGame.initiatePlayers();
 
@@ -146,10 +145,7 @@ class CardGameTest {
 
     @Test
     void initiate(){
-        Scanner scanner = mock(Scanner.class);
-        when(scanner.nextLine()).thenReturn("Player1");
-        when(scanner.nextLine()).thenReturn("4");
-        cardGame.userInput.setUserInput(scanner);
+        cardGame.userInput.setUserInput(mockScanner());
 
         cardGame.initiatePlayers();
         cardGame.initiate();
@@ -162,10 +158,7 @@ class CardGameTest {
     void play(){
         cardGame.setLoadConfig(mockLoadConfig());
 
-        Scanner scanner = mock(Scanner.class);
-        when(scanner.nextLine()).thenReturn("Player1");
-        when(scanner.nextLine()).thenReturn("4");
-        cardGame.userInput.setUserInput(scanner);
+        cardGame.userInput.setUserInput(mockScanner());
 
         // couldn't find a way to set winner so just ending the game with no winner
         cardGame.setFinishGame(true);
