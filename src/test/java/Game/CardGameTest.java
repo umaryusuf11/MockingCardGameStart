@@ -157,7 +157,17 @@ class CardGameTest {
 
     @Test
     void play(){
-        fail("Not yet implemented"); //Remove
+        Scanner scanner = mock(Scanner.class);
+        when(scanner.nextLine()).thenReturn("Player1");
+        when(scanner.nextLine()).thenReturn("4");
+        cardGame.userInput.setUserInput(scanner);
+
+        // couldn't find a way to set winner so just ending the game with no winner
+        cardGame.setFinishGame(true);
+        cardGame.play();
+
+        assertTrue(cardGame.finshGame);
+
     }
 
 }
