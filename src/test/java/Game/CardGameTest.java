@@ -121,6 +121,8 @@ class CardGameTest {
 
     @Test
     void createHumanPlayer(){
+        cardGame.setLoadConfig(mockLoadConfig());
+
         Scanner scanner = mock(Scanner.class);
         when(scanner.nextLine()).thenReturn("Player1");
         cardGame.userInput.setUserInput(scanner);
@@ -130,6 +132,8 @@ class CardGameTest {
 
     @Test
     void initiatePlayers(){
+        cardGame.setLoadConfig(mockLoadConfig());
+
         Scanner scanner = mock(Scanner.class);
         when(scanner.nextLine()).thenReturn("Player1");
         when(scanner.nextLine()).thenReturn("4");
@@ -156,6 +160,8 @@ class CardGameTest {
 
     @Test
     void play(){
+        cardGame.setLoadConfig(mockLoadConfig());
+
         Scanner scanner = mock(Scanner.class);
         when(scanner.nextLine()).thenReturn("Player1");
         when(scanner.nextLine()).thenReturn("4");
