@@ -18,6 +18,12 @@ import static org.mockito.Mockito.spy;
 class CardGameTest {
     CardGame cardGame = new CardGame();
 
+    private LoadConfig mockLoadConfig() {
+        LoadConfig loadConfig = mock(LoadConfig.class);
+        when(loadConfig.getConfig()).thenReturn(new ArrayList<String>(List.of("Player1", "Player2", "Player3")));
+        return loadConfig;
+    }
+
     @Test
     void getDeck() {
         assertEquals(52, cardGame.getDeck().size());
@@ -93,18 +99,14 @@ class CardGameTest {
 
     @Test
     void getComputerPlayersNames(){
-        LoadConfig loadConfig = mock(LoadConfig.class);
-        when(loadConfig.getConfig()).thenReturn(new ArrayList<String>(List.of("Player1", "Player2", "Player3")));
-        cardGame.setLoadConfig(loadConfig);
+        cardGame.setLoadConfig(mockLoadConfig());
         ArrayList<String> playerNames = new ArrayList<>(List.of("Player1", "Player2", "Player3"));
         assertEquals(playerNames, cardGame.getComputerPlayersNames());
     }
 
     @Test
     void createComputerPlayers(){
-        LoadConfig loadConfig = mock(LoadConfig.class);
-        when(loadConfig.getConfig()).thenReturn(new ArrayList<String>(List.of("Player1", "Player2", "Player3")));
-        cardGame.setLoadConfig(loadConfig);
+        cardGame.setLoadConfig(mockLoadConfig());
         cardGame.createComputerPlayers(4);
         assertEquals("Player3", cardGame.players.get(2).getName());
 
@@ -112,10 +114,7 @@ class CardGameTest {
 
     @Test
     void createComputerPlayersSize(){
-        LoadConfig loadConfig = mock(LoadConfig.class);
-        // Got an error when I tried to use the List.of() method alone.
-        when(loadConfig.getConfig()).thenReturn(new ArrayList<String>(List.of("Player1", "Player2", "Player3")));
-        cardGame.setLoadConfig(loadConfig);
+        cardGame.setLoadConfig(mockLoadConfig());
         cardGame.createComputerPlayers(4);
         assertEquals(3, cardGame.players.size());
     }
